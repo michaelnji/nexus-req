@@ -1,5 +1,5 @@
 {
-  "name": "@cod3vil/response-rat",
+  "name": "sfr",
   "version": "1.0.0",
   "author": {
     "name": "COD3V1L",
@@ -8,17 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/michaelnji/response-rat.git"
+    "url": "git+https://github.com/michaelnji/sfr.git"
   },
   "packageManager": "npm@10.8.0",
-  "main": "./dist/response-rat.cjs",
-  "module": "./dist/response-rat.esm.js",
-  "jsdelivr": "./dist/response-rat.iife.js",
+  "main": "./dist/sfr.cjs",
+  "module": "./dist/sfr.esm.js",
+  "jsdelivr": "./dist/sfr.iife.js",
   "exports": {
     ".": {
-      "require": "./dist/response-rat.cjs",
-      "import": "./dist/response-rat.esm.js",
-      "types": "./dist/response-rat.d.ts"
+      "require": "./dist/sfr.cjs",
+      "import": "./dist/sfr.esm.js",
+      "types": "./dist/sfr.d.ts"
     },
     "./dist/": {
       "import": "./dist/",
@@ -38,7 +38,7 @@
     "release": "bun run build && np"
   },
   "bugs": {
-    "url": "https://github.com/michaelnji/response-rat/issues"
+    "url": "https://github.com/michaelnji/sfr/issues"
   },
   "description": "request handling in nuxt simplified",
   "files": [
@@ -49,7 +49,7 @@
     "src",
     "package.json"
   ],
-  "homepage": "https://github.com/michaelnji/response-rat#readme",
+  "homepage": "https://github.com/michaelnji/sfr#readme",
   "keywords": [
     "refid",
     "unique"
@@ -57,15 +57,15 @@
   "license": "MIT",
   "private": false,
   "type": "module",
-  "types": "./dist/response-rat.d.ts",
+  "types": "./dist/sfr.d.ts",
   "typesVersions": {
     "*": {
       "*": [
-        "./dist/response-rat.d.ts"
+        "./dist/sfr.d.ts"
       ]
     }
   },
-  "typings": "./dist/response-rat.d.ts",
+  "typings": "./dist/sfr.d.ts",
   "devDependencies": {
     "@types/jsdom": "^21.1.6",
     "@types/node": "^20.11.5",

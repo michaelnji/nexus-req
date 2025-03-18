@@ -6,4 +6,5 @@ export interface ServerResponse<Status extends StatusCode, Data> {
     ok: Status extends 200 ? true : false
     data?: Status extends 200 ? Data : null
     error?: Status extends 200 ? null : string
-}
+} 
+
