@@ -1,40 +1,38 @@
-import { ServerResponse } from "./types";
-import type { ErrorCodes, StatusCode } from "./types";
+import type { ErrorCodes, ServerResponse, StatusCodes } from "./types";
 
 /**
- * Creates a standardized server response object
- * @param status - HTTP status code or error code
- * @param message - Response message
- * @param data - Optional payload for successful responses
- * @returns Typed server response object
+ * Sends a server response based on the provided status code, message, and optional data.
+ * 
+ * @template S - The type of status code, which can be either an ErrorCode or a StatusCode.
+ * @template D - The type of data to be included in the response, applicable for success responses.
+ * 
+ * @param {S} status - The HTTP status code for the response.
+ * @param {string} message - The message to be included in the response.
+ * @param {D} [data] - Optional data to be included in the response, applicable for success responses.
+ * 
+ * @returns {ServerResponse<S, D>} - The server response object containing status, message, ok flag, and optional data.
  */
-export function sendServerResponse<S extends ErrorCodes, M extends string>(status: S, message: M): ServerResponse<S,M>
+export function sendServerResponse<S extends ErrorCodes>(
+    status: S,
+    message: string
+): ServerResponse<S, unknown>;
 
+export function sendServerResponse<S extends StatusCodes, D>(
+    status: S,
+    message: string,
+    data: D
+): ServerResponse<S, D>;
 
-export function sendServerResponse<S extends 200, M extends string, D>(status: S, message: M, data: D,): ServerResponse<S, D>
-
-
-export function sendServerResponse(status: StatusCode | ErrorCodes, message?: string, data?: unknown,) {
-
-    if (status === 200) {
-        const res = {
-            status,
-            data,
-            message,
-            ok: true
-
-        }
-
-        return res
-    }
-
-    const res = {
+export function sendServerResponse(
+    status: StatusCodes | ErrorCodes,
+    message: string,
+    data: unknown = null
+): ServerResponse<StatusCodes | ErrorCodes, unknown> {
+    const isSuccess = status === 200;
+    return {
         status,
         message,
-        ok: false
-
-    }
-
-    return res
-
+        ok: isSuccess,
+        data: isSuccess ? data : null
+    };
 }

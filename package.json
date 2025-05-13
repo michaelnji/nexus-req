@@ -1,5 +1,5 @@
 {
-  "name": "sfr",
+  "name": "nexus-req",
   "version": "1.0.0",
   "author": {
     "name": "COD3V1L",
@@ -8,17 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/michaelnji/sfr.git"
+    "url": "git+https://github.com/michaelnji/nexus-req.git"
   },
   "packageManager": "npm@10.8.0",
-  "main": "./dist/sfr.cjs",
-  "module": "./dist/sfr.esm.js",
-  "jsdelivr": "./dist/sfr.iife.js",
+  "main": "./dist/nexus-req.cjs",
+  "module": "./dist/nexus-req.esm.js",
+  "jsdelivr": "./dist/nexus-req.iife.js",
   "exports": {
     ".": {
-      "require": "./dist/sfr.cjs",
-      "import": "./dist/sfr.esm.js",
-      "types": "./dist/sfr.d.ts"
+      "require": "./dist/nexus-req.cjs",
+      "import": "./dist/nexus-req.esm.js",
+      "types": "./dist/nexus-req.d.ts"
     },
     "./dist/": {
       "import": "./dist/",
@@ -38,7 +38,7 @@
     "release": "bun run build && np"
   },
   "bugs": {
-    "url": "https://github.com/michaelnji/sfr/issues"
+    "url": "https://github.com/michaelnji/nexus-req/issues"
   },
   "description": "request handling in nuxt simplified",
   "files": [
@@ -49,7 +49,7 @@
     "src",
     "package.json"
   ],
-  "homepage": "https://github.com/michaelnji/sfr#readme",
+  "homepage": "https://github.com/michaelnji/nexus-req#readme",
   "keywords": [
     "refid",
     "unique"
@@ -57,15 +57,15 @@
   "license": "MIT",
   "private": false,
   "type": "module",
-  "types": "./dist/sfr.d.ts",
+  "types": "./dist/nexus-req.d.ts",
   "typesVersions": {
     "*": {
       "*": [
-        "./dist/sfr.d.ts"
+        "./dist/nexus-req.d.ts"
       ]
     }
   },
-  "typings": "./dist/sfr.d.ts",
+  "typings": "./dist/nexus-req.d.ts",
   "devDependencies": {
     "@types/jsdom": "^21.1.6",
     "@types/node": "^20.11.5",
@@ -83,10 +83,7 @@
     "vitest": "^1.2.1"
   },
   "dependencies": {
-    "date-fns": "^4.1.0",
     "js-sha256": "^0.11.0",
-    "mathjs": "^13.1.1",
-    "nanoid": "^5.0.7",
     "node-forge": "^1.3.1"
   }
 }

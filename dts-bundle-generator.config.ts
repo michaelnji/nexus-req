@@ -2,7 +2,7 @@ const config = {
     entries: [
         {
             filePath: "./src/index.ts",
-            outFile: "./dist/sfr.d.ts",
+            outFile: "./dist/nexus-req.d.ts",
             noCheck: false,
         },
     ],
