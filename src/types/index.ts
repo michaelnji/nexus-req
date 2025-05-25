@@ -10,3 +10,9 @@ export interface ServerResponse<
     data?: Status extends 200 ? Data : null;
 }
 
+export interface NexusError extends Error {
+    statusCode: ErrorCodes;
+    statusMessage: string;
+    fatal: boolean
+}
+
