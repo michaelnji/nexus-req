@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { generateHumanMessage, commonErrors } from '../src/gen'; // Assuming the function to 
-describe('Erro message Generator', () => {
+describe('Error message Generator', () => {
 
     it('should return an error reply for fetch errors', async () => {
         const reply = generateHumanMessage('FetchError: Failed to fetch')

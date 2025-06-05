@@ -11,8 +11,11 @@ export interface ServerResponse<
 }
 
 export interface NexusError extends Error {
-    statusCode: ErrorCodes;
-    statusMessage: string;
-    fatal: boolean
+    code: ErrorCodes;
+    message: string;
+    fatal?: boolean
+    path?: string
 }
+
+
 
