@@ -1,7 +1,7 @@
 /// <reference types="vitest" />
-import path from 'node:path';
-import { defineConfig } from 'vite';
-import packageJson from './package.json';
+import path from "node:path";
+import { defineConfig } from "vite";
+import packageJson from "./package.json";
 
 const getPackageName = () => {
     return packageJson.name;
@@ -33,11 +33,11 @@ export default defineConfig({
             formats,
             fileName: format => fileName[format],
         },
-        minify: 'terser',
+        minify: "terser",
         terserOptions: {
             keep_classnames: true,
             keep_fnames: true,
-        }
+        },
     },
     test: {
         globals: true,

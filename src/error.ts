@@ -7,7 +7,7 @@ import type { ErrorCodes, NexusError } from "./types";
 export class ServerResponseError implements NexusError {
     code: ErrorCodes;
     message: string;
-    fatal?: boolean = false
+    fatal?: boolean = false;
     path: string;
     name: string;
     stack?: string | undefined;
@@ -24,10 +24,10 @@ export class ServerResponseError implements NexusError {
      *   fatal: Optional boolean indicating if the error is fatal. Defaults to false.
      */
     constructor(message: string, code: ErrorCodes, path: string, fatal?: boolean) {
-        this.message = message.length < 1 ? 'unknown error' : message
+        this.message = message.length < 1 ? "unknown error" : message;
         this.name = this.constructor.name;
         this.code = code;
-        this.fatal = fatal ?? false
+        this.fatal = fatal ?? false;
         this.path = path;
     }
 }
