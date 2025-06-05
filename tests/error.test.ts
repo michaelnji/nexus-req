@@ -1,12 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { ServerResponseError } from '../src/error.ts'
-import type { NexusError, ErrorCodes } from '../src/types/index.ts';
 
-
-// Helper to check if stack trace is present and correct
-function stackTraceIncludesClassName(stack: string | undefined, className: string): boolean {
-    return typeof stack === 'string' && stack.includes(className);
-}
 
 describe('ServerResponseError', () => {
     it('should create an instance with all properties set (happy path)', () => {
