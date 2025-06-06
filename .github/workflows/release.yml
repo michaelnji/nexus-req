@@ -18,6 +18,11 @@ jobs:
         run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
         env: 
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+      - name: Release package
+        run: bun run release --ci
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
 
       - name: End message
