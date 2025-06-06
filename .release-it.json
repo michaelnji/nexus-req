@@ -1,0 +1,22 @@
+{
+    "git": {
+        "requireBranch": "main",
+        "tagName": "v${version}"
+    },
+    "github": {
+        "release": true,
+        "tokenRef": "GITHUB_TOKEN"
+    },
+    "hooks": {
+        "before:init": [
+            "git pull",
+            "npm run test"
+        ],
+        "after:bump": [
+            "npx auto-change-log -p"
+        ]
+    },
+    "npm": {
+        "publish": true
+    }
+}

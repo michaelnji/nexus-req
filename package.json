@@ -23,6 +23,7 @@
     "lint-staged": "^15.5.2",
     "np": "^10.2.0",
     "prettier": "^3.5.3",
+    "release-it": "^19.0.3",
     "terser": "^5.41.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
@@ -72,7 +73,7 @@
     "test:c": "vitest --coverage",
     "format": "prettier . --write",
     "upgrade": "upgradeps",
-    "release": "bun run build && np"
+    "release": "bun run build && release-it"
   },
   "type": "module",
   "types": "./dist/nexus-req.d.ts",
