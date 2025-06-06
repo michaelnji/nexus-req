@@ -10,7 +10,7 @@
     "hooks": {
         "before:init": [
             "git pull",
-            "bun run test"
+            "bun test"
         ],
         "after:bump": [
             "bunx auto-change-log -p"
