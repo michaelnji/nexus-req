@@ -9,4 +9,4 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: End message
-        run: echo 'All done'
+        run: echo 'done'
