@@ -20,7 +20,7 @@ export class ServerResponseError extends Error implements NexusError {
      *   path: The path or context where the error occurred.
      *   fatal: Optional boolean indicating if the error is fatal. Defaults to false.
      */
-    constructor(message: string, code: ErrorCodes, path: string, fatal: boolean = false) {
+    constructor(message: string, code: ErrorCodes, path: string, fatal = false) {
         super(message.length < 1 ? 'unknown error' : message);
         this.name = this.constructor.name;
         this.code = code;
