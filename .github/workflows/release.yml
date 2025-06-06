@@ -2,11 +2,28 @@ name: Release & Publish to NPM
 on: workflow_dispatch
 jobs:
   release:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
       - name: Install dependencies
-        run: npm ci
+        run: bun i
+      - name: Initialize Git user
+        run: |
+            git config --global user.email "codebase65@outlook.com"
+            git config --global user.name "GH releases"
+      - name: Initialize NPM Auth
+        run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+        env: 
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+      - name: Release package
+        run: bun run release --ci
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+
+
       - name: End message
         run: echo 'done'
