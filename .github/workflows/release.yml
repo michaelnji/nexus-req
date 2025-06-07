@@ -1,8 +1,9 @@
 name: Release & Publish to NPM
-on: pull_request:
-      types: [closed]
-      branches:
-        - main
+on: 
+  pull_request:
+    types: [closed]
+    branches:
+      - main
 jobs:
   release:
     if: github.event.pull_request.merged == true
