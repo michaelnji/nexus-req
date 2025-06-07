@@ -29,7 +29,7 @@ jobs:
       - name: Release package
         run: bun run release --ci
         env:
-          GITHUB_TOKEN: ${{secrets.NEXUS_AUTH}}
+          NEXUS_AUTH: ${{secrets.NEXUS_AUTH}}
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
 
