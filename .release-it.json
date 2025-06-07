@@ -5,7 +5,7 @@
     },
     "github": {
         "release": true,
-        "tokenRef": "GITHUB_TOKEN"
+        "tokenRef": "NEXUS_AUTH"
     },
     "hooks": {
         "before:init": [
