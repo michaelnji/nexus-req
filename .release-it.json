@@ -13,7 +13,7 @@
             "bun test"
         ],
         "after:bump": [
-            "bunx auto-change-log -p"
+            "bunx auto-changelog -p"
         ]
     },
     "npm": {
